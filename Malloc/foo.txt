@@ -1,0 +1,1 @@
+this is a test file with some textinside of it. The buffer should scale by using realloc.
