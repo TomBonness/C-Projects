@@ -1,4 +1,4 @@
-05/31/25 (•)
+05/31/25
 #Ch.20 - Structs II
 - structs have padding bytes (sizeOf parts =/= sizeOf struct)
   - can measure how many extra bytes with offsetof()
