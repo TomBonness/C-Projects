@@ -1,0 +1,19 @@
+05/31/25
+Ch.20 - Structs II
+- structs have padding bytes (sizeOf parts =/= sizeOf struct)
+  - can measure how many extra bytes with offsetof()
+- bit packing allows you to define the size of each type, overwriting their default
+  compiler assigned size
+  - must be adjacent for this to work, can't alternate normal and packed types
+  - can also insert zero width type like //unsigned int :0 || instead of normal int a:2 or whatever
+- union allows you to declare a bunch of variables but only reserve memory space of the largest type
+  - can then only use one of the fields at a time since they take the same memory
+  - "type punning" might be something to google
+  - can make a union of structs, if they have the same initial space (ie first stuff declared) they will share memory!
+    - this can be used to share info between structs since they share the memory!
+
+
+
+05/31/25
+Ch.21 - Characters & Strings II
+- 
