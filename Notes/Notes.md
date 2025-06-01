@@ -1,5 +1,5 @@
-05/31/25
-Ch.20 - Structs II
+05/31/25 (•)
+#Ch.20 - Structs II
 - structs have padding bytes (sizeOf parts =/= sizeOf struct)
   - can measure how many extra bytes with offsetof()
 - bit packing allows you to define the size of each type, overwriting their default
@@ -14,6 +14,7 @@ Ch.20 - Structs II
 
 
 
-05/31/25
-Ch.21 - Characters & Strings II
-- 
+05/31/25 (•)
+#Ch.21 - Characters & Strings II
+-Trigraphs are triplets of 3 characters starting with ?? that the compiler subs other symbols in with
+
