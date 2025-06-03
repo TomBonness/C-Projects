@@ -1,5 +1,7 @@
+# Beej's Guide to C Programming Notes
+
 05/31/25
-#Ch.20 - Structs II
+## Ch.20 - Structs II
 - structs have padding bytes (sizeOf parts =/= sizeOf struct)
   - can measure how many extra bytes with offsetof()
 - bit packing allows you to define the size of each type, overwriting their default
@@ -13,8 +15,25 @@
     - this can be used to share info between structs since they share the memory!
 
 
+## Ch.21 - Characters & Strings II
+- Trigraphs
+  - triplets of 3 characters that the compiler encodes into special characters, mostly you can ignore
+  - this is second point
+- unicode can be encoded with escapes beforehand like \u1234
 
-05/31/25 (•)
-#Ch.21 - Characters & Strings II
--Trigraphs are triplets of 3 characters starting with ?? that the compiler subs other symbols in with
 
+
+
+06/02/25
+## Ch.22 - Enumerated Types
+- Constant int values by name
+- can only be integer type whereas #define can do anything
+- enums show up as their identifier in the debugger whereas #define just shows the raw number
+- enums increment up starting at zero for lists automatically
+
+
+## Ch.23 - Pointers III - Pointers to Pointers and More
+- int** (int-pointer-pointer) just points to the address of the other pointer
+- You can make a pointer to anything with *
+- you can get the thing a pointer points to with &
+  - inverse of eachother * &
