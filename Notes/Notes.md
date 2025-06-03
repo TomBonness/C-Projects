@@ -37,3 +37,21 @@
 - You can make a pointer to anything with *
 - you can get the thing a pointer points to with &
   - inverse of eachother * &
+- can convert pointer to intptr_t type and back without losing data with <stdint.h>
+- **Strict Aliasing** means you can only access an object via pointers ot compatible types of the object
+- can subtract one pointer from another in the same array to get the difference between their
+  positions in the array
+  - the type of that difference is up to implementation
+  - can store result in ptrdiff_t to be more portable via <stddef.h>
+- can call function via pointer of the same type as the return type of the function
+  - looks like a func prototype
+    - so something like int (*p)(int, int) just points to the function
+      - this is always a pointer to a function! "(*p) ("
+
+
+## Ch.24 - Bitwise Operations
+- bitwise shift causes integer promotion on each operand before it's executed
+
+
+## Ch. 25 - Variadic Functions
+- 
