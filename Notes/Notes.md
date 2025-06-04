@@ -1,5 +1,6 @@
 # Beej's Guide to C Programming Notes
 
+
 05/31/25
 ## Ch.20 - Structs II
 - structs have padding bytes (sizeOf parts =/= sizeOf struct)
@@ -51,7 +52,19 @@
 
 ## Ch.24 - Bitwise Operations
 - bitwise shift causes integer promotion on each operand before it's executed
+- generally the same as java
 
 
+
+
+06/03/25
 ## Ch. 25 - Variadic Functions
-- 
+- **Variadic Functions** are functions that can take in an arbitrary number of args
+  - All variadic functions must have at least one argument
+- must have args first followed by ...
+  - ex: void func(int a, ...)
+- must include <stdarg.h>
+- special variable type **va_list**
+  - start capturing list with **va_start** which is the last named parameter (before the ...)
+  - process each additional arg with **va_arg** (takes in all the args)
+  - end with **va_end**
