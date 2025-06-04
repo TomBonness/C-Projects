@@ -68,3 +68,24 @@
   - start capturing list with **va_start** which is the last named parameter (before the ...)
   - process each additional arg with **va_arg** (takes in all the args)
   - end with **va_end**
+
+
+
+
+06/04/2
+## Ch. 26 - Locale and Internationalization
+- include <locale.h>
+- use **set_locale(AC_ALL, "")**
+  - basically says use this env locale for everything
+  - you can specify in the second arg what locale if you want
+  - can call struct lconv *x = localeconv(); for special symbols like currency
+  - see page 206 for list
+
+
+
+## Ch. 27 - Unicode & Wide Characters
+- a **code point** is a numeric value representing a character
+- the **encoding** is how the character is represented in memory
+- bytes can be in little endian or big endian order. default is technically big but windows default is little
+- UTF-8 is reverse compatible with ASCII
+- Generally uses one byte until it can't and then adds the encoding in a seperate byte
