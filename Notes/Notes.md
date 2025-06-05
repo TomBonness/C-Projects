@@ -110,4 +110,30 @@
 
 06/05/2025
 ## Ch. 28 - Exiting a Program
--
+- main func has implicit 'return 0' when it exits
+- calling exit() ends the program
+- **Exit Handlers**
+  - functions to be called when the program exits
+  - **atexit()** will call the arg before closing
+  - **quick_exit** exits fast but doesn't flush temp files and doesn't call atexit() funcs
+    - **at_quick_exit()** will still call handlers
+  - **_Exit()** immediately exits and nothing else
+  - **assert()** must be true for the program to run
+  - **abort()** signal something went wrong and exit
+
+
+
+## Ch. 29 - Signal Handling
+>[!NOTE]
+ignore this chapter and default to the OS' signal handling instead
+- function that is auomatically called when an external event occures
+- can pause a program until signal is handled
+  - can be ignored, handled, or allow the default action
+    - ex program that ignores exit signal
+- only portable thing you can do is SIG_IGN and SIG_DFL
+
+
+
+## Ch. 30 - Variable-Length Arrays (VLAs)
+- an array whose size is determined at runtime
+  - dont need to free() memory after
