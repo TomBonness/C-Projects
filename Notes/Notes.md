@@ -72,7 +72,7 @@
 
 
 
-06/04/2
+06/04/25
 ## Ch. 26 - Locale and Internationalization
 - include <locale.h>
 - use **set_locale(AC_ALL, "")**
@@ -90,4 +90,24 @@
 - UTF-8 is reverse compatible with ASCII
 - Generally uses one byte until it can't and then adds the encoding in a seperate byte
 - use \u1234 for smaller than 8 bits and \U0001D4D1 for 16 bits
+- a normal char* string is actually a multibyte string
+- a **Wide character** is an array of characters NOT an array of bytes like multibyte strings
+  - wide characters have the wchar_t type with #include <wchar.h>
+  - can convert between wchar_t and multibyte with conversion functions ie mbtowc(), wctomb(), etc
+  - wcslen() is the equivalent of strlen() for wide character strings
+  - don't use byte oriented functs with wide characters
+    - don't use fprinf() with wide chars instead use fwprintf()
+  - mbstate_t should be initilized with memset() to zero
+- UTF
+  - can prefix a string to convert
+    - char *s = u8"Hello World!";
+  - can convert to multibyte and back withs funcs like mbrtoc16()
+- 3rd party libs for converting
+  - icon, ICU, etc
 
+
+
+
+06/05/2025
+## Ch. 28 - Exiting a Program
+-
