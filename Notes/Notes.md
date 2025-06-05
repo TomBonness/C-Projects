@@ -89,3 +89,5 @@
 - bytes can be in little endian or big endian order. default is technically big but windows default is little
 - UTF-8 is reverse compatible with ASCII
 - Generally uses one byte until it can't and then adds the encoding in a seperate byte
+- use \u1234 for smaller than 8 bits and \U0001D4D1 for 16 bits
+
