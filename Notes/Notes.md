@@ -137,4 +137,7 @@ ignore this chapter and default to the OS' signal handling instead
 ## Ch. 30 - Variable-Length Arrays (VLAs)
 - an array whose size is determined at runtime
   - dont need to free() memory after
+- Not commonly used eg banned in linux kernal because they can cause problems
+- __STDC_NO_VLA__ macro is set to 1 if VLAs are not present
+
 
