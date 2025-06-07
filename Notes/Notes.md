@@ -137,3 +137,4 @@ ignore this chapter and default to the OS' signal handling instead
 ## Ch. 30 - Variable-Length Arrays (VLAs)
 - an array whose size is determined at runtime
   - dont need to free() memory after
+
