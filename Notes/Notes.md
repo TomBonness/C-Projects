@@ -141,5 +141,6 @@ ignore this chapter and default to the OS' signal handling instead
 - Not commonly used eg banned in linux kernal because they can cause problems
 - __STDC_NO_VLA__ macro is set to 1 if VLAs are not present
 - **sizeof()** is executed at runtime whereas non VLAs is computed at compile time
-
-
+- **typedef** makes a new type with values as they existed when typedef was executed
+  - fixed size array of the length of the VLA at time of execution
+- VLAs are generally slower
