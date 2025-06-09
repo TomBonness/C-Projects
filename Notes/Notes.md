@@ -161,5 +161,44 @@ ignore this chapter and default to the OS' signal handling instead
 
 
 ## Ch.32 - Types Part V: Compound Literals and Generic Selections
+- **Compound Literals**
+  - create object without assigning it to a variable
+    - ex unnamed array of ints: (int []){1,2,3,4} can be a func arg instead of like 'int a'
+  - unnamed object only exists in its scope
+    - pointer to unnamed object out of scope will point to dead object so undefined behavior
+- **Generic Selections**
+  - select piece of code based on type of the first argument to the expression
+  - processed at compile time not runtime
+  - declared like _Generic(i, int: "whatever", float: "stuff");
+    - the type of i picks the corresponding case
+
+
+
+06/09/2025
+## Ch. 33 - Arrays Part II
+ - C always fills empty array slots with 0
+  - even in multi dimentional arrays
+
+
+
+## Ch. 34 - Long Jumps
+- rarely used but allows you to jump back to the original function call
+- **setjmp()** sets where to jump to and **longjmp()** goes to the setjmp
+  - need to include <setjmp.h>
+- keeps execution point stored in jmp_buf and just uses that to jump back so kinda weird
+- can't jump to setjmp() in another thread
+
+
+
+## Ch. 35 - Incomplete Types
+- an **incomplete type** is a type where the sizeof() is unknown
+  - a type that hasn't finished declaring
+- only used in forward references to structs with self referential structures
+- can declare pointer to something that doesnt exist yet like a linked list inside a struct!
+  - basically you could never make a pair of structs that reference eachother if this didnt exist
+
+
+
+## Ch. 36 - Complex Types
 - 
 
