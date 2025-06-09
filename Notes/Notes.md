@@ -134,6 +134,7 @@ ignore this chapter and default to the OS' signal handling instead
 
 
 
+
 06/06/2025
 ## Ch. 30 - Variable-Length Arrays (VLAs)
 - an array whose size is determined at runtime
@@ -144,3 +145,21 @@ ignore this chapter and default to the OS' signal handling instead
 - **typedef** makes a new type with values as they existed when typedef was executed
   - fixed size array of the length of the VLA at time of execution
 - VLAs are generally slower
+
+
+
+
+06/08/2025
+## Ch. 31 - Goto
+- Sends execution to jump forward/backwards to specified label skipping inbetween
+- function scope - can goto them anywhere inside the function they're used in
+  - cannot goto other function's labels
+- can be used for nested loops instead of **continue**
+  - used to break out of loops/do/while
+- Tail call optimization for recursive functions
+
+
+
+## Ch.32 - Types Part V: Compound Literals and Generic Selections
+- 
+
