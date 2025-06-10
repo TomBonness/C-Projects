@@ -200,5 +200,21 @@ ignore this chapter and default to the OS' signal handling instead
 
 
 ## Ch. 36 - Complex Types
-- 
+- #INCLUDE <complex.h>
+- types: **complex** and **imaginary**
+  - macro: **I** ex: double complex x = 5 + 2I
+- can grab with **creal()** and **cimag()**
+- C has trig functions too!
 
+
+
+## Ch. 37 - Fixed Width Integer Types
+- can define types of an exact length ie 32bits
+- three main classes of these types
+  - **intN_t** for ints of exactly a certain size
+  - **int_leastN_t** for ints of at least a certain size
+  - **int_fastN_t** for ints of at least a certain size but as fast as possible
+
+
+## Ch. 38 - Date and Time Functionaliy
+- 
