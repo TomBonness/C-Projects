@@ -230,11 +230,12 @@ ignore this chapter and default to the OS' signal handling instead
 
 
 
+06/10/2025
 ## Ch. 39 - Multithreading
 - standard library is generally thread safe
 - threads are identified with the opaque type **thrd_t**
   - when a thread is created it is given a **thrd_t** ID
 - **thrd_create** takes a pointer to the function to run of type **thrd_start_t**
->[!NOTE]
-none of this works you gotta do pthread instead because unix and stuff
+- none of this works you gotta do pthread instead because unix and stuff
+  - okay so just make sure everything is a void pointer lol
 
