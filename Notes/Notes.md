@@ -217,4 +217,24 @@ ignore this chapter and default to the OS' signal handling instead
 
 
 ## Ch. 38 - Date and Time Functionaliy
-- 
+- types: **time_t** and **struct tm**
+  - time_t represents number of seconds since epoch
+  - struct has calendar + time broken down into components like tm_sec and tm_year etc
+- **ctime()** is the only portable way to get the local time lmao
+- the func **localtime()** converts **time_t** to a **struct tm**
+- the func **gmtime()** does the same but in UTC
+- func **mktime()** converts **struct tm** to **t_time**
+- **strftime()** is like **printf()** but for dates
+- **timespec_get()** lets you grab epoch time down to the nanosecond
+- might not always be able to subtract times so better to use **difftime()**
+
+
+
+## Ch. 39 - Multithreading
+- standard library is generally thread safe
+- threads are identified with the opaque type **thrd_t**
+  - when a thread is created it is given a **thrd_t** ID
+- **thrd_create** takes a pointer to the function to run of type **thrd_start_t**
+>[!NOTE]
+none of this works you gotta do pthread instead because unix and stuff
+
