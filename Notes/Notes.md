@@ -230,6 +230,7 @@ ignore this chapter and default to the OS' signal handling instead
 
 
 
+
 06/10/2025
 ## Ch. 39 - Multithreading
 - standard library is generally thread safe
@@ -238,4 +239,15 @@ ignore this chapter and default to the OS' signal handling instead
 - **thrd_create** takes a pointer to the function to run of type **thrd_start_t**
 - none of this works you gotta do pthread instead because unix and stuff
   - okay so just make sure everything is a void pointer lol
-
+- threads don't have their own memory beyond local variables
+- **_Thread_local** before variable tells C every thread gets its own version of the variable
+  - if the variable is in block scope it must be static (or extern)
+- **Thread-Specific Storage (TSS)**
+  - can specify a destructor for when the TSS variable is deleted ex free()
+    - ex cleans up malloc data with free
+  - **tss_t** type variable needs to exist
+    - initializaed with **tss_create**
+    - deleted with **tss_delete**
+      - this doesn't do anything but release the memory created before
+    - **tss_set** and **tss_get**
+      - work as getters and setters
