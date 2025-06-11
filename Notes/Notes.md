@@ -255,3 +255,9 @@ ignore this chapter and default to the OS' signal handling instead
   - initialize the variable with **mtx_init()**
   - then threads can call with **mtx_lock()** and **mtx_unlock()**
   - when finished it can be destroyed with **mtx_destroy()**
+  - when other threads try to access it, they are blocked and sleep until they can access
+- **Conditional Variables** - 
+  - allows thread to sleep until an event in another thread occurs
+  - only holds the data C uses to track the thread condition
+  - mutex can be passed between parent and child thread because **cnd_wait()** releases the mutex
+  
