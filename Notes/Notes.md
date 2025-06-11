@@ -251,3 +251,7 @@ ignore this chapter and default to the OS' signal handling instead
       - this doesn't do anything but release the memory created before
     - **tss_set** and **tss_get**
       - work as getters and setters
+- **Mutexes** only allow a single thread into a section of code at a time
+  - initialize the variable with **mtx_init()**
+  - then threads can call with **mtx_lock()** and **mtx_unlock()**
+  - when finished it can be destroyed with **mtx_destroy()**
