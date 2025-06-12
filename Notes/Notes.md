@@ -260,4 +260,4 @@ ignore this chapter and default to the OS' signal handling instead
   - allows thread to sleep until an event in another thread occurs
   - only holds the data C uses to track the thread condition
   - mutex can be passed between parent and child thread because **cnd_wait()** releases the mutex
-  
+
