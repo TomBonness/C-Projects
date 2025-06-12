@@ -256,8 +256,18 @@ ignore this chapter and default to the OS' signal handling instead
   - then threads can call with **mtx_lock()** and **mtx_unlock()**
   - when finished it can be destroyed with **mtx_destroy()**
   - when other threads try to access it, they are blocked and sleep until they can access
-- **Conditional Variables** - 
+- **Conditional Variables**
   - allows thread to sleep until an event in another thread occurs
   - only holds the data C uses to track the thread condition
   - mutex can be passed between parent and child thread because **cnd_wait()** releases the mutex
+- timed condition wait **cnd_timedwait** allows you to specify a timeout to stop waiting
+- **cnd_Broadcast()** lets you wake up all waiting threads at once
+- **call_once()** only allows one thread to run a function once even if many call the function
+  - must declare flag once_flag of = ONCE_FLAG_INIT;
 
+
+
+
+06/12/2025
+## Ch. 40 - Atomics
+- 
