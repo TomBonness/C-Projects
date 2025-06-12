@@ -270,4 +270,5 @@ ignore this chapter and default to the OS' signal handling instead
 
 06/12/2025
 ## Ch. 40 - Atomics
-- 
+- test for atomic support with __STDC_NO_ATOMICS__ 0 is supported 1 means not supported
+
