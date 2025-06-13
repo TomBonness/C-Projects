@@ -283,4 +283,16 @@ ignore this chapter and default to the OS' signal handling instead
 - forcing Synchronization is slower than a regular variable so they're not used unless needed
 - thread reading an atomic variable is an *acquire* operation
 - thread writing an atomic variable is a *release* operation
+- *x = x + 3* is not atomic but *x += 3* is atomic
+- library functions can Synchronize too
+  - malloc() calloc() etc and all the thread funcs too like thrd_create() thrd_join() etc
+- a bunch of atomic types exist
+- can create custom atomic types with **_Atomic**
+  - ie *typedef _Atomic(double) atomic_double;*
+    - can't be an array or function or already atomic
 
+  ### Ch. 40.9 Lock-Free Atomic Variables
+  - hardware can limited the amount of data that can be atomically read or written
+    - if the hardware can't do it atomically, then it's done with a lock to acheive the same effect
+      - this sucks and is slow and cringe
+  - certain types are guaranteed to be lock free atomics (see list pg 317)
