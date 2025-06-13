@@ -296,3 +296,34 @@ ignore this chapter and default to the OS' signal handling instead
     - if the hardware can't do it atomically, then it's done with a lock to acheive the same effect
       - this sucks and is slow and cringe
   - certain types are guaranteed to be lock free atomics (see list pg 317)
+  - atomic macros can have 3 different values
+    - 0 never lock free
+    - 1 sometimes lock free (Not known at compile time, known at runtime bc of like arm vs intel)
+      - can test at runtime with **atomic_is_lock_free()**
+    - 2 always lock free
+  - if you read/write a shared variable it's undefined unless you do it with a lock free atomic variable
+    - singnal handlers can become portable with lock free atomics
+
+- atomic structs and unions
+  - make it atomic when constructing with _Atomic (struct point) p;
+    - can't access fields in an atomic struct
+      - instead can copy the entire struct into a normal variable and access there
+- _Atomic int *p; // p is a pointer to an atomic int
+- int * _Atomic p; // p is an atomic pointer to an int
+- _Atomic int * _Atomic p; // p is an atomic pointer to an atomic int
+- different kinds of memory orders exist - default is sequential ordering
+>[!NOTE]
+see page 323 for additional resources about atomic lock stuff! vids, books, examples, etc.
+
+
+
+
+06/13/2025
+## Ch. 41 - Function Specifiers, Alignment Specifiers / Operators
+- gives the compiler tips on how the function will be used to help optimization when compiling
+- inline for speed
+  - function body embedded entirely where the call is made so no jumping around
+    - modern compilers are smart enough where this generally doesn't help anymore
+  - should be used with static to keep it file scope
+    - if you use it without static you need an extern version of the function or the compiler will get angry
+
