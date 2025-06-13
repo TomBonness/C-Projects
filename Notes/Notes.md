@@ -275,5 +275,12 @@ ignore this chapter and default to the OS' signal handling instead
   - if one thread is writing a 32 bit variable, another thread can't read the half written variable
 - #include <stdatomic.h> 
 - **atomic_int** variable type
-
+- Synchronization
+  - when everything another thread has done becomes visible in another thread
+  - not a blocking operation, all threads run until they exit
+  - occures when one thread reads an atomic another thread wrote
+  - Synchronization happens with ALL PREVIOUS WRITES not just the atomic variable
+- forcing Synchronization is slower than a regular variable so they're not used unless needed
+- thread reading an atomic variable is an *acquire* operation
+- thread writing an atomic variable is a *release* operation
 
