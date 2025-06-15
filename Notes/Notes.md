@@ -326,4 +326,11 @@ see page 323 for additional resources about atomic lock stuff! vids, books, exam
     - modern compilers are smart enough where this generally doesn't help anymore
   - should be used with static to keep it file scope
     - if you use it without static you need an extern version of the function or the compiler will get angry
+- **noreturn** indicates to the compiler that the program will exit somehow before the function returns
+- **alignas** and **_Alignas** with <stdalign.h>
+  - ie starting address must be divisible by 2 - some low level OS stuff requires this
+  - can align char line an int with: char alignas(int) c;
+- **alignof()** will show the OS' default alignment for the given variable
 
+
+Done! :D
